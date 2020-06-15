@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_title_login">16dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="boder">1dp</dimen>
+    <dimen name="size_text_tile_login">24sp</dimen>
+    <dimen name="margin_top_login_title">16dp</dimen>
+    <dimen name="text_title_size">18sp</dimen>
+    <dimen name="size_edit">48dp</dimen>
+    <dimen name="margin_top_edit">16dp</dimen>
+    <dimen name="margin_right_edit">16dp</dimen>
+    <dimen name="padding_content">16dp</dimen>
+    <dimen name="margin_botton_login">16dp</dimen>
+</resources>
