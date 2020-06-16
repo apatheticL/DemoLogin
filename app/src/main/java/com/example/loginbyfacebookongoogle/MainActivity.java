@@ -4,12 +4,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,14 +34,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_fragment);
-        ButterKnife.bind(this);
-        createRepuest();
-        callbackManager =  CallbackManager.Factory.create();
-        loginDifferent = new LoginDifferent(this, this, callbackManager,googleSignInClient);
-        buttonLoginWithFace.setOnClickListener(this);
-        buttonLoginWithGoogle.setOnClickListener(this);
+        if (getIntent().getData()==null){
+            setContentView(R.layout.login_fragment);
+            ButterKnife.bind(this);
+            createRepuest();
+
+            callbackManager =  CallbackManager.Factory.create();
+            loginDifferent = new LoginDifferent(this, this, callbackManager,googleSignInClient);
+            buttonLoginWithFace.setOnClickListener(this);
+            buttonLoginWithGoogle.setOnClickListener(this);
+
+        }
+        else {
+
+        }
+
+
+
     }
+
+    private void updateUI(GoogleSignInAccount account) {
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+        if (acct != null) {
+            String personName = acct.getDisplayName();
+            String personGivenName = acct.getGivenName();
+            String personFamilyName = acct.getFamilyName();
+            String personEmail = acct.getEmail();
+            String personId = acct.getId();
+            Uri personPhoto = acct.getPhotoUrl();
+
+        }
+    }
+
     private void createRepuest() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

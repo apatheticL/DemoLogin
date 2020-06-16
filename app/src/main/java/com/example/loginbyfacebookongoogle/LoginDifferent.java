@@ -55,6 +55,7 @@ public class LoginDifferent {
                                     if (email.equals("")) {
                                         Toast.makeText(context, "Facebook ko co email", Toast.LENGTH_LONG).show();
                                     }
+
                                     Toast.makeText(context, name, Toast.LENGTH_LONG).show();
                                     Log.d("facebook", name);
                                 } catch (JSONException e) {

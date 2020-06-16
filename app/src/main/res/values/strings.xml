@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LoginByFaceBookOnGoogle</string>
 
-   <string name="loginModel">Đăng nhập</string>
+    <string name="loginModel">Đăng nhập</string>
     <string name="title_login_by_google">Đăng nhập bằng email</string>
     <string name="email">Email</string>
     <string name="saveAccount">Ghi nhớ tôi</string>
@@ -15,5 +15,8 @@
 
     <string name="facebook_app_id">594164024544902</string>
     <string name="fb_login_protocol_scheme">fb594164024544902</string>
-
+    <string name="client_id">432292506079-4m1eousa79rpsa27vuvhkfr2tjvdnhr8.apps.googleusercontent.com</string>
+ <string name="client_secret">T26EM9cDJEt2vFs6rhRJRjOQ</string>
+ <string name="facebook_logout">Đăng xuất</string>
+    <string name="google_logout">Đăng xuất</string>
 </resources>
